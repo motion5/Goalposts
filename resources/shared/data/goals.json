@@ -1,0 +1,16 @@
+[
+  {
+    "name": "My first goal",
+    "type": "yearly",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, sunt. Esse aperiam excepturi inventore autem tempora magni eaque natus asperiores! Tenetur error commodi dolores laboriosam quos soluta explicabo nihil voluptatem.",
+    "created_datetime": "2018-07-05 13:13",
+    "due_datetime": "2018-07-05 13:13"
+  },
+  {
+    "name": "Code this app",
+    "type": "single",
+    "description": "Code an app that allows a user to set goals of different types and lets them view them in a grid view",
+    "created_datetime": "2019-01-03 13:13",
+    "due_datetime": "2018-01-05 13:13"
+  }
+]

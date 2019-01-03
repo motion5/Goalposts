@@ -1,0 +1,30 @@
+Extjs tutorial app build notes:
+
+1. Use ext-gen app -i to generate app interactively
+2. Create a new set of data and a model to access data with
+https://www.youtube.com/watch?v=TOcsozuN5gw&index=5&list=PLhok5qPG-Cq3ry5ludHThU9sTQO06HBv9
+Steps: 
+  1. Add data.json to resources > shared > data (if its shared across desktop and mobile)
+  2. Create a model in app > shared > src > model [Goal.js]
+  3. Create a store that uses that model in app > shared > src > store [Goal.js]
+  4. Since we are loading data from file, don't need hard coded data propery, just use proxy with type of ajax and a url property that points to the file we want to read
+  5. Add autoLoad: true to store file
+  6. Add store to app > desktop | phone > src > Application.js
+     stores: ['Goalposts.store.Goal']
+
+To use that data (bind it to a model)
+https://www.youtube.com/watch?v=e7jkZj8m1To&list=PLhok5qPG-Cq3ry5ludHThU9sTQO06HBv9&index=6
+Steps:
+  1. Consider where you want to use data, if it's universal then it will go in app > desktop | phone > src > view > MainViewModel.js
+  2. Add a new store - the key will be what is referenced when doing data binding e.g. {key}
+  3. properties for now can just be type which references the alias for your model
+  4. Define folder structure for MVVM for that store
+    app > desktop > src > view > goals > GoalView.js, GoalView.scss, GoalViewController, GoalViewModel, GoalViewStore
+  5. In GoalView.js
+  -  define all properties
+  -  no need for viewModel or store props as this data comes from parent view and since MainViewModel has this data so a direct bind isn't needed
+  -  bind data to a store with bind property
+  bind: {
+    store: '{goalstore}',
+  },
+  6. In this case we are defining a grid view so need to fill out the columns property
